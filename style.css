@@ -1,113 +1,214 @@
+
+
 /* Definindo as variáveis de cor e fonte */
 :root {
   --cor-primaria: #000000;
   --cor-secundaria: #ffffff;
   --cor-terciaria: #DB592A;
+  --cor-gradiente-lilas: linear-gradient(297deg, rgba(85,15,116,1) 17%, rgba(170,45,253,1) 64%);
   --cor-hover: #272727;
   --font-primaria: 'Krona One', sans-serif;
   --font-secundaria: 'Montserrat', sans-serif;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-}
-
 body {
   box-sizing: border-box;
-  background-color: var(--cor-primaria);
+  background: var(--cor-gradiente-lilas);
   color: var(--cor-secundaria);
   font-family: var(--font-secundaria);
 }
 
-/* Estilo do cabeçalho */
-.cabecalho {
-  padding: 5% 10%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.cabecalho_link {
-  display: flex;
-  gap: 80px;
-  align-content: flex-end;
-}
-
-.cabecalho_link_atalhos {
-  font-family: var(--font-secundaria);
-  font-size: 1.5rem;
-  font-weight: 400;
+.cabeçalho {
+  font-size: 3rem;
+  font-weight: bold;
   color: var(--cor-terciaria);
-  text-decoration: none;
   text-align: center;
-  border-radius: 5px;
-  max-width: 378px;
+  margin-bottom: 20px;
+  padding: 5%;
+  background: rgb(144,61,200);
+background: radial-gradient(circle, rgba(144,61,200,1) 0%, rgba(67,8,93,1) 58%, rgba(37,17,52,1) 100%);
 }
 
-.cabecalho_link_atalhos:hover {
-  background-color: var(--cor-hover);
-}
 
-/* Estilo da apresentação */
+/* Estilo da apresentação*/
 .apresentacao {
-  padding: 5% 10%;
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+  padding: 5%;
+  max-width: 90%;
+  background: linear-gradient(135deg, rgba(85, 15, 116, 0.8), rgba(170, 45, 253, 0.8)); /* Gradiente suave */
+  flex-direction: row;
+  gap: 50px;  /* Adiciona espaçamento entre a imagem e o texto */
+  border-radius: 15px; /* Bordas arredondadas para suavizar a apresentação */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra suave para dar profundidade */
+  margin: 10px 50px  ;
+}
+.apresentacao:hover {
+  transform: scale(1.1);  /* Zoom suave ao passar o mouse */
+  box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.3); /* Aumenta a sombra ao passar o mouse */
+}
+
+.apresentacao__perfil {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 40px;
+  justify-content: center;
+  gap: 30px;
+  max-width: 100%;
 }
+
 
 .apresentacao__conteudo {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-.apresentacao__conteudo__titulo {
-  font-size: 2.25rem;
-  font-family: var(--font-primaria);
+ 
 }
 
 .apresentacao__conteudo__texto {
-  font-size: 1.5rem;
+  font-size: 2rem;
+  margin: auto;
+  text-align: center;
+  align-items: center;
+  color: #fff;
+  background-color: rgba(194, 197, 250, 0.7);  /* Fundo suave para o texto */
+  font-weight: 300;
+  padding: 15px;
+  border-radius: 15px; /* Bordas arredondadas no bloco de texto */
+  width:950px;
+  height: 200px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+.apresentacao__conteudo__texto strong {
+  color: var(--cor-terciaria);
+  font-weight: 600; /* Destacar palavras fortes */
+}
+.apresentacao__conteudo__texto p {
+  margin-bottom: 20px; /* Espaço entre parágrafos */
+} 
+
+.apresentacao__conteudo__texto:hover {
+  transform: scale(1.1);  /* Zoom suave ao passar o mouse */
+  box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.3); /* Aumenta a sombra ao passar o mouse */
 }
 
 .imagem_perfil {
-  width: 350px; /* Ajuste conforme necessário */
-  height: auto;
-  border-radius: 50%; /* Transforma a imagem em um círculo */
-  border: 5px solid var(--cor-terciaria); /* Adiciona uma borda destacada */
-  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.3); /* Glow suave */
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  margin-left: -40px; /* Aproxima a imagem do conteúdo */
+  width: 280px; /* Imagem um pouco maior */
+  height: 280px;
+  border-radius: 50%; /* Manter imagem circular */
+  object-fit: cover;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15); /* Sombrinha suave para a imagem */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Efeito suave */
+  margin-right: 30px;  /* Adiciona margem à direita da imagem */  
 }
 
 .imagem_perfil:hover {
-  transform: scale(1.1); /* Dá um leve zoom ao passar o mouse */
-  box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.5); /* Aumenta o glow ao passar o mouse */
+  transform: scale(1.1);  /* Zoom suave ao passar o mouse */
+  box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.3); /* Aumenta a sombra ao passar o mouse */
+}
+/* Estilo da seção Sobre Mim */
+ .sobre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  border-radius: 10px;
+  margin-top: 40px;
+  max-width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+  background: linear-gradient(135deg, rgba(85, 15, 116, 0.8), rgba(170, 45, 253, 0.8)); /* Gradiente suave */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra suave para dar profundidade */
+}
+.sobre:hover {
+  transform: scale(1.1);  /* Zoom suave ao passar o mouse */
+  box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.3); /* Aumenta a sombra ao passar o mouse */
 }
 
+.sobre__titulo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--cor-terciaria);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sobre__texto {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--cor-hover);
+  text-align: justify;
+}
+  .apresentacao {
+    flex-direction: column-reverse;
+    padding: 5%;
+  }
+
+  .apresentacao__conteudo {
+    width: auto;
+  }
+
+  .apresentacao__links__botao {
+    width: 80%;
+  }
+
+  .habilidades {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background-color: #c2c5fa;
+    padding: 40px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 800px;
+    margin: 40px auto 50px;
+  }
+  
+  .imagem__habilidades {
+    width: 700px; /* Tamanho ajustado*/ 
+    height: 500px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  .imagem__habilidades {
+    transform: scale(1.1);  /* Zoom suave ao passar o mouse */
+    box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.3); /* Aumenta a sombra ao passar o mouse */
+  }
+
+  /* Estilo do rodapé */
+.rodape {
+  color: var(--cor-primaria);
+  font-weight: bold;
+  background: rgb(144,61,200);
+  background: radial-gradient(circle, rgba(144,61,200,1) 0%, rgba(67,8,93,1) 58%, rgba(37,17,52,1) 100%);
+  padding: 5px;
+  text-align: center;
+  font-family: var(--font-secundaria);
+  font-size: 0.9rem;
+  gap: 10px;
+}
+.imagem_icone {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px; /* Espaço entre o ícone e o texto */
+}
 .apresentacao__links {
   display: flex;
   flex-direction: column; /* Organiza os elementos verticalmente */
-  align-items: center; /* Centraliza os itens */
   text-align: center; /* Garante que o texto fique centralizado */
-  margin-top: 40px; /* Adiciona mais espaço entre os botões e o restante do conteúdo */
-  padding-bottom: 40px; /* Garante que não fiquem colados no rodapé */
+  margin-top: 40px; /* Adiciona mais espaço entre os botões e o restante do conteúdo*/ 
+  padding-bottom: 40px; /* Garante que não fiquem colados no rodapé*/
 }
 .apresentacao__links__subtitulo {
   font-size: 2rem; /* Ajusta o tamanho do subtítulo */
   font-weight: bold; /* Deixa o texto mais destacado */
-  margin-bottom: 10px; /* Espaço entre o subtítulo e os botões */
+  margin-bottom: 10px; /* Espaço entre o subtítulo e os botões*/ 
   color: var(--cor-terciaria);
 }
 
 .apresentacao__links__botoes {
   display: flex; /* Coloca os botões lado a lado */
   gap: 20px; /* Espaço entre os botões */
-  flex-wrap: wrap; /* Para que os botões fiquem responsivos em telas menores */
+  flex-wrap: nowrap; /* Para que os botões fiquem responsivos em telas menores*/ 
   justify-content: center;
 }
 
@@ -122,6 +223,8 @@ body {
   font-weight: bold;
   transition: all 0.3s ease;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  min-width: 150px; /* Largura mínima para os botões */
+  padding: 10px 20px; /* Ajuste do preenchimento interno do botão */
 }
 
 .apresentacao__links__botao:hover {
@@ -129,95 +232,52 @@ body {
   transform: scale(1.05);
   box-shadow: 3px 3px 15px rgba(93, 96, 97, 0.6);
 }
-
-.imagem_icone {
-  width: 20px;
-  height: 20px;
-  margin-right: 8px; /* Espaço entre o ícone e o texto */
-}
-
-/* Estilo do rodapé */
-.rodape {
-  color: var(--cor-primaria);
-  background-color: var(--cor-terciaria);
-  padding: 10px;
-  text-align: center;
-  font-family: var(--font-secundaria);
-  font-size: 1.5rem;
-  gap: 10px;
-}
-
-/* Estilo da seção Sobre Mim */
-.sobre {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #1a1a22;
-  padding: 40px;
-  border-radius: 10px;
-  margin-top: 40px;
-  width: 90%;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 50px;
-}
-
-.sobre__titulo {
-  font-size: 2rem;
-  font-weight: bold;
-  color: var(--cor-terciaria);
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.sobre__texto {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: #eeeaea;
-  text-align: justify;
-}
-
-/* Estilos responsivos para telas menores */
-@media (max-width: 1200px) {
-  .cabecalho {
-    padding: 10%;
-  }
-
+@media (max-width: 768px) {
+  /* Ajustar o layout da apresentação */
   .apresentacao {
-    flex-direction: column-reverse;
-    padding: 5%;
+    flex-direction: column; /* Muda para coluna em telas menores */
+    padding: 2%;
   }
 
-  .apresentacao__conteudo {
-    width: auto;
+  .imagem_perfil {
+    width: 200px; /* Imagem menor em telas pequenas */
+    height: 200px;
   }
 
-  .apresentacao__links__botao {
-    width: 80%;
+  .sobre {
+    padding: 20px; /* Reduz o padding */
   }
 
-  .rodape {
-    font-size: 1.2rem;
-  }
   .habilidades {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    background-color: #1a1a22;
-    padding: 40px;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 800px;
-    margin: 40px auto 50px;
+    flex-direction: column; /* Coloca os itens em coluna em telas menores */
   }
-  
+
   .imagem__habilidades {
-    width: 70px; /* Tamanho ajustado */
-    height: 70px;
-    transition: transform 0.3s ease, filter 0.3s ease;
+    width: 100%; /* Torna a imagem 100% da largura em telas pequenas */
+    height: auto; /* Mantém a proporção da imagem */
   }
-  
- 
+
+  .apresentacao__links__botoes {
+    flex-direction: column; /* Organiza os botões em coluna */
+  }
+}
+
+@media (max-width: 480px) {
+  .cabeçalho {
+    font-size: 2rem; /* Ajusta o tamanho da fonte para cabeçalho */
+  }
+
+  .sobre__titulo {
+    font-size: 1.5rem; /* Ajusta o tamanho da fonte no título */
+  }
+
+  .sobre__texto {
+    font-size: 1rem; /* Ajusta o tamanho da fonte do texto */
+  }
+
+  .apresentacao__conteudo__texto {
+    font-size: 1.5rem; /* Ajusta o tamanho da fonte do texto */
+    width: 100%; /* Garante que o bloco de texto ocupe toda a largura */
+    height: auto; /* Ajusta a altura do bloco */
+  }
+}
